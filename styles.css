@@ -341,7 +341,7 @@ body.cover-mode .container .lead {
 
 .cover-root {
   opacity: 0;
-  transition: opacity 120ms ease;
+  transition: opacity 121ms ease;
 }
 
 .cover-root.show {
