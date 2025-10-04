@@ -40,7 +40,7 @@ body {
   padding: .4rem 1.2rem;
   border: 1px solid #c1995c;
   border-radius: 999px;
-  color: #bb6a30;
+  color: #c1995c;
   text-decoration: none;
   font-size: clamp(12px, 1.1vw, 10px);
 }
@@ -134,41 +134,7 @@ body {
 
 /* === Door transition overlay === */
 
-.doors {
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 9999;
-  pointer-events: none;
-}
 
-.doors.active {
-  display: flex;
-  pointer-events: all;
-}
-
-.door {
-  flex: 1 1 50%;
-  background: #0d0d0d;
-  transition: transform 900ms ease-in-out;
-  will-change: transform;
-}
-
-.door.left {
-  transform-origin: left center;
-}
-
-.door.right {
-  transform-origin: right center;
-}
-
-.doors.open .door.left {
-  transform: translateX(-100%);
-}
-
-.doors.open .door.right {
-  transform: translateX(100%);
-}
 
 /* fade-in for revealed cover content */
 
@@ -370,47 +336,12 @@ body.cover-mode .container .lead {
 
 /* ===== Doors (overlay + animation) ===== */
 
-.doors {
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.doors.active {
-  display: flex;
-  pointer-events: all;
-}
-
-.door {
-  flex: 1 1 50%;
-  background: #360509;
-  transition: transform 900ms ease-in-out;
-  will-change: transform;
-}
-
-.door.left {
-  transform-origin: left center;
-}
-
-.door.right {
-  transform-origin: right center;
-}
-
-.doors.open .door.left {
-  transform: translateX(-100%);
-}
-
-.doors.open .door.right {
-  transform: translateX(100%);
-}
 
 /* Fade-in for revealed content + block clicks during anim */
 
 .cover-root {
   opacity: 0;
-  transition: opacity 220ms ease;
+  transition: opacity 120ms ease;
 }
 
 .cover-root.show {
@@ -656,25 +587,6 @@ body.cover-mode .legal {
 
 /* === OVERRIDE: 3D hinge swing === */
 
-.doors {
-  perspective: 1200px;
-}
-
-.door {
-  background: #360509;
-  transform: translateZ(0) rotateY(0);
-  transform-style: preserve-3d;
-  transition: transform 5000ms cubic-bezier(.2,.75,.2,1);
-  box-shadow: 0 0 0 rgba(0,0,0,0);
-}
-
-.door.left {
-  transform-origin: left center;
-}
-
-.door.right {
-  transform-origin: right center;
-}
 
 /* open state */
 
@@ -702,20 +614,17 @@ body.cover-mode .legal {
 
 /* Fade + slide */
 
-.door {
-  background: #360509;
-  transition: transform 1100ms ease, opacity 1000ms ease;
-}
+
 
 /* Initial hidden state */
 
 /* Keyframes for fade + slide up */
 
 .cta:hover {
-  transform: scale(1.04) !important;
-  transition: transform 1s ease;
-  background: rgba(0,0,0,0.14);
-  color: #c1995c;
+  transform: scale(1.03) !important;
+  
+  background: rgba(56, 54, 54, 0.14);
+  color: #bb6a30;
 }
 
 /* Entrance animation */
@@ -911,12 +820,31 @@ body.cover-mode .cover-title {
     transition: color .25s ease;
   }
 
+  @media (hover:hover) and (pointer:fine) {
+  body.cover-mode .cover-title a {
+    display: inline-block;              /* needed for transform */
+    transform-origin: center;
+    transform: translateZ(0);
+    transition: transform .22s ease;
+    will-change: transform;
+    color: #fff !important;             /* keep color unchanged */
+    text-decoration: none !important;
+  }
+
   body.cover-mode .cover-title a:hover {
-    color: #c1995c !important;           /* gold on hover */
+    transform: scale(1.04);
   }
 
   body.cover-mode .cover-title a:active {
-    color: #4c2b13 !important;           /* darker gold on click */
+    transform: scale(1.03);             /* slight press effect */
+  }
+}
+
+/* Ensure video can’t intercept hover/clicks */
+.cover-video { pointer-events: none !important; }
+
+  body.cover-mode .cover-title a:active {
+    color: #616161 !important;           /* darker gold on click */
   }
 }
 
