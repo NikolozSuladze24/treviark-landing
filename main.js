@@ -16,9 +16,9 @@
             <div class="col-4" style="margin-top:14px;">
               <ul class="nav nav-tabs d-none d-md-flex gap-4 toplinks"
                   style="padding-top:0;padding-left:141px;padding-bottom:0;margin-top:-5px;">
-                <li class="nav-item"><a class="nav-link active" href="profile.html">PROFILE</a></li>
-                <li class="nav-item"><a class="nav-link" href="favourite.html">FAVOURITE</a></li>
-                <li class="nav-item"><a class="nav-link" href="cart.html">CART</a></li>
+                <li class="nav-item"><a class="nav-link active" href="https://treviark.storera.ge/">PROFILE</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://treviark.storera.ge/cp/wishlist">FAVOURITE</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://treviark.storera.ge/cart">CART</a></li>
               </ul>
               <div class="d-flex d-md-none align-items-center gap-3 topicons" style="margin-left:85px;">
                 <a class="icon-btn" href="favourite.html">Fav</a><a class="icon-btn" href="cart.html">Cart</a>

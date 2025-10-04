@@ -853,3 +853,35 @@ body.cover-mode .cover-title {
 
 
 
+/* Desktop uses IMAGE */
+.cover-img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-video {
+  display: none; /* hidden on desktop */
+}
+
+/* Mobile uses VIDEO instead of image */
+@media (max-width: 576px) {
+  .cover-video {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .cover-img {
+    display: none !important;
+  }
+}
+
+
