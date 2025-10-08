@@ -42,7 +42,7 @@
              style="position:absolute; left:50%; top:45%; transform:translate(-50%,-50%);
                     color:#fff; font-weight:700; letter-spacing:.08em;
                     text-shadow:0 2px 12px rgba(0,0,0,.35); text-align:center;">
-          <a href="https://treviark.storera.ge/" style="color:inherit; text-decoration:none;">COLLECTION</a>
+          <a href="https://treviark.storera.ge/" style="color:inherit; text-decoration:none;">Shop</a>
         </div>
 
         <div style="position:absolute; left:50%; bottom:15%; transform:translateX(-50%);
