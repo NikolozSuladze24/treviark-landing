@@ -568,3 +568,64 @@ body.cover-mode .cover-title {
 @media (max-width: 576px) {
   #coverRoot .cover { padding-left: 5vw; padding-right: 5vw; }
 }
+
+/* ===== Typography controls (scoped by breakpoint) ===== */
+
+/* Desktop / default values */
+:root {
+  /* heading (House of Rarity) */
+  --h2-min: 24px;
+  --h2-pref: 4.2vh;
+  --h2-max: 42px;
+
+  /* body copy paragraphs */
+  --p-min: 12px;
+  --p-pref: 2.8vh;
+  --p-max: 25px;
+
+  /* "Shop" link */
+  --shop-min: 18px;
+  --shop-pref: 3.4vh;
+  --shop-max: 32px;
+}
+
+/* Mobile overrides ONLY (≤576px) */
+@media (max-width: 576px) {
+  :root {
+    --h2-min: 22px;
+    --h2-pref: 3.6vh;
+    --h2-max: 38px;
+
+    --p-min: 11px;
+    --p-pref: 2.2vh;
+    --p-max: 18px;
+
+    --shop-min: 17px;
+    --shop-pref: 3.0vh;
+    --shop-max: 28px;
+  }
+}
+
+/* Optional: very short screens (height-based) */
+@media (max-height: 700px) {
+  :root {
+    --h2-pref: 3.4vh;
+    --p-pref: 1.8vh;
+    --shop-pref: 2.8vh;
+  }
+}
+
+/* Apply variables (do not change these selectors) */
+#coverRoot .cover > div[style*="top:25%"] h2.section-title {
+  font-size: clamp(var(--h2-min), var(--h2-pref), var(--h2-max));
+}
+
+#coverRoot .cover > div[style*="top:25%"] h3,
+#coverRoot .cover > div[style*="top:25%"] p {
+  font-size: clamp(var(--p-min), var(--p-pref), var(--p-max));
+}
+
+#coverRoot .cover-title,
+#coverRoot .cover-title a {
+  font-size: clamp(var(--shop-min), var(--shop-pref), var(--shop-max)) !important;
+}
