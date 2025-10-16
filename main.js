@@ -26,35 +26,7 @@
             </a>
           </div>
 
-          <!-- RIGHT: profile + wishlist + cart(0) -->
-          <div class="col-4 d-flex justify-content-end align-items-center gap-2 gap-md-3 pe-2 pe-md-3">
-            <!-- User (md+) -->
-            <a class="icon-btn icon-user-sharp-thin d-none d-md-inline-flex"
-               href="https://treviark.storera.ge/" aria-label="Profile" title="Profile">
-              <svg viewBox="0 0 24 24" class="icon-svg">
-                <circle cx="12" cy="8" r="3"></circle>
-                <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
-              </svg>
-            </a>
-
-            <!-- Wishlist (sm+) -->
-            <a class="icon-btn icon-heart-thin d-none d-sm-inline-flex"
-               href="https://treviark.storera.ge/cp/wishlist" aria-label="Wishlist" title="Wishlist">
-              <svg viewBox="0 0 24 24" class="icon-svg">
-                <path d="M12 21s-7-4.5-9-8.5A5.5 5.5 0 0 1 12 7a5.5 5.5 0 0 1 9 5.5C19 16.5 12 21 12 21z"></path>
-              </svg>
-            </a>
-
-            <!-- Cart (always shown; count hidden on xs) -->
-            <a class="icon-btn icon-bag-thin d-inline-flex align-items-center gap-1"
-               href="https://treviark.storera.ge/cart" aria-label="Cart" title="Cart">
-              <svg viewBox="0 0 24 24" class="icon-svg">
-                <path d="M6 7h12l-1 12H7L6 7z"></path>
-                <path d="M9 7a3 3 0 0 1 6 0"></path>
-              </svg>
-              <span class="cart-count d-none d-md-inline">(0)</span>
-            </a>
-          </div>
+          
         </div>
       </div>
     </header>
