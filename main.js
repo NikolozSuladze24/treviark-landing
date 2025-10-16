@@ -61,15 +61,15 @@
               text-align:center; color:#fff; z-index:3;">
     <h2 class="section-title" style="margin:0; font-weight:600;">Philosophy</h2>
 
-    <h3 class="lead fw-semibold" style="margin:10px 0 0;">
+    <h3 class="lead" style="margin:10px 0 0;">
       Treviark is a house where living unfolds as a respectful ritual, rooted deeply in a culture of manifold landscapes. It is a practice of care — from empirical observation to natural integrity, from creation to serving — celebrating the quiet grace of tradition and deliberation.
     </h3>
 
-    <h3 class="lead fw-semibold" style="margin:10px 0 0;">
+    <h3 class="lead" style="margin:10px 0 0;">
       Our first releases are “Georgian Breakfast” (Tea Black) and “Velvet Infusion” (Tea Green). Both originate from Georgian plantations left untouched for nearly a century, where the cold winters naturally protect the bushes and allow them to thrive without artificial influence. Nothing is added, only revealed.
     </h3>
 
-    <h3 class="lead fw-semibold" style="margin:10px 0 0;">
+    <h3 class="lead" style="margin:10px 0 0;">
       More announcements will follow.
     </h3>
   </div>
