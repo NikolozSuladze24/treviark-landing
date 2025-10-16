@@ -315,6 +315,9 @@ body.cover-mode .legal { display: none !important; }
   z-index: 1000;
   box-shadow: 0 0 0 1px rgba(0,0,0,.06), 10px 0 30px rgba(0,0,0,.08);
 }
+@media (max-width: 576px) {
+  .side-menu { width: 100vw !important }}
+
 .side-menu.open { transform: translateX(0); }
 
 .side-menu__inner {

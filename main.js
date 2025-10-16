@@ -16,14 +16,7 @@
               </svg>
             </button>
 
-            <!-- Search (hidden on the very smallest screens) -->
-            <a class="icon-btn icon-search-thin d-none d-sm-inline-flex"
-               href="https://treviark.storera.ge/search" aria-label="Search" title="Search">
-              <svg viewBox="0 0 24 24" class="icon-svg">
-                <circle cx="11" cy="11" r="7"></circle>
-                <path d="M16.5 16.5L21 21"></path>
-              </svg>
-            </a>
+            
           </div>
 
           <!-- CENTER: brand -->
@@ -74,11 +67,9 @@
         </div>
         <hr class="side-menu__rule"/>
         <nav class="side-menu__nav">
-          <a href="https://treviark.storera.ge/">Home</a>
-          <a href="https://treviark.storera.ge/house">House</a>
+          <a href="https://nikolozsuladze24.github.io/treviark-landing/">House Philosophy</a>
           <a href="https://treviark.storera.ge/">Shop</a>
-          <a href="https://treviark.storera.ge/society">Society</a>
-          <a href="https://treviark.storera.ge/contact">Contact</a>
+          <a href="https://treviark.storera.ge/menu/Society">Society</a>
         </nav>
       </div>
     </aside>
@@ -96,7 +87,7 @@
   <div class="cover-copy"
        style="position:absolute; left:50%; top:25%; transform:translate(-50%,0);
               text-align:center; color:#fff; z-index:3;">
-    <h2 class="section-title" style="margin:0; font-weight:600;">House of rarity</h2>
+    <h2 class="section-title" style="margin:0; font-weight:600;">Philosophy</h2>
 
     <h3 class="lead fw-semibold" style="margin:10px 0 0;">
       Treviark is a house where living unfolds as a respectful ritual, rooted deeply in a culture of manifold landscapes. It is a practice of care — from empirical observation to natural integrity, from creation to serving — celebrating the quiet grace of tradition and deliberation.
