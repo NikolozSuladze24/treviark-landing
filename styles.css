@@ -99,7 +99,7 @@ body.animating .legal { pointer-events: none; }
   :root { --header-h: 80px; --brand-h: clamp(28px, 5.8vw, 56px); }
 }
 @media (max-width: 576px) {
-  :root { --header-h: 72px; --brand-h: 46px; }
+  :root { --header-h: 83px; --brand-h: 63px; }
 }
 
 body.cover-mode {
@@ -391,4 +391,63 @@ body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
 }
 
 
+/* Make the icon fully opaque (photo #2 is solid black, not grey) */
+.icon-btn { opacity: 1 !important; }
+
+/* Reset any global icon-svg styles for THIS hamburger only */
+.icon-btn .hamburger {
+  display: block;
+  overflow: visible;
+  fill: none;
+  width: 30px;              /* visual size; change freely */
+  height: 22px;
+}
+
+/* Crisp, flat-ended, controllable thickness */
+.icon-btn .hamburger line {
+  stroke: #111 !important;                  /* solid black, not grey */
+  stroke-width: 0.95px !important;          /* ← adjust thickness here */
+  stroke-linecap: square !important;        /* flat ends (no rounding) */
+  vector-effect: non-scaling-stroke !important; /* stays 1.35px when scaled */
+  shape-rendering: crispEdges;              /* crisper on many engines */
+}
+
+
+
+body.cover-mode .topbar .col-4:first-child {
+  padding-left: 0px !important; /* adjust this number */
+  padding-bottom: 2px !important;
+}
+
+
+
+
+@media (max-width: 576px) {
+  body.cover-mode .topbar .col-4:first-child {
+    padding-bottom: 0px !important;
+    padding-left: 0px !important;
+  }
+}
+
+
+
+body.cover-mode .topbar .brand-img {
+    padding-top: 3px;}
+
+@media (max-width: 576px) {
+  body.cover-mode .topbar .brand-img {
+    padding-top: 10px;  /* adjust this number */
+  }
+}
+
+
+
+@media (min-width: 576px) {
+body.cover-mode .brand-img {
+  height: calc(var(--brand-h) + 9px) !important;
+  max-height: none !important;
+  padding-top: 7px !important;
+  padding-right: 6px !important;
+}
+}
 
