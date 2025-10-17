@@ -1,7 +1,8 @@
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>treviarkFull</title>
 
   <!-- Bootstrap CSS -->
@@ -10,11 +11,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body style="background: #360509;">
+<body style="background:#360509;">
 
   <!-- Landing screen -->
   <div class="text-center flex-column hero" style="display:flex;text-align:center;position:relative;">
-    <img class="img-fluid logo" width="967" height="438" src="LOGO.png" />
+    <img class="img-fluid logo" width="967" height="438" src="LOGO.png" alt="Treviark Logo" />
     <a class="cta">ENTER THE HOUSE</a>
   </div>
 
@@ -24,12 +25,92 @@
     <a href="https://treviark.storera.ge/menu/privacy-policy">Privacy Policy</a>
   </div>
 
-  
   <!-- Doors overlay -->
   <div class="doors">
     <div class="door left"></div>
     <div class="door right"></div>
   </div>
+
+  <!-- ===== Cover / Post-doors view (moved out of JS) ===== -->
+  <div class="cover-root" id="coverRoot" hidden style="opacity:0">
+    <header class="topbar">
+      <div class="container-fluid">
+        <div class="row gx-0 align-items-center">
+          <!-- LEFT: hamburger -->
+          <div class="col-4 d-flex align-items-center gap-2 gap-md-3 ps-2 ps-md-3">
+            <button class="icon-btn js-menu-open icon-menu-thin" aria-label="Open menu" title="Menu">
+              <svg viewBox="0 0 24 24" class="icon-svg" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- CENTER: brand -->
+          <div class="col-4 text-center">
+            <a class="d-inline-flex justify-content-center brand" href="https://treviark.storera.ge/">
+              <img class="img-fluid brand-img" width="781" height="352" src="logo (1).png" alt="Treviark" />
+            </a>
+          </div>
+
+          <!-- (empty right col, per your current layout) -->
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Slide-in side menu -->
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+      <div class="side-menu__inner">
+        <div class="d-flex justify-content-end">
+          <button class="side-menu__close js-menu-close" aria-label="Close menu">CLOSE</button>
+        </div>
+        <hr class="side-menu__rule"/>
+        <nav class="side-menu__nav">
+          <a href="https://nikolozsuladze24.github.io/treviark-landing/">House Philosophy</a>
+          <a href="https://treviark.storera.ge/">Shop</a>
+          <a href="https://treviark.storera.ge/menu/Society">Society</a>
+        </nav>
+      </div>
+    </aside>
+    <div class="side-scrim" id="sideScrim" hidden></div>
+
+    <section class="cover">
+      <video class="cover-video"
+             src="cover-mobile.mp4"
+             muted autoplay loop playsinline webkit-playsinline preload="auto"
+             poster="heroCover.jpg"></video>
+
+      <img class="cover-img" src="heroCover.jpg" alt="Cover" />
+
+      <!-- TEXT: desktop uses absolute; mobile can override via CSS -->
+      <div class="cover-copy"
+           style="position:absolute; left:50%; top:25%; transform:translate(-50%,0);
+                  text-align:center; color:#fff; z-index:3;">
+        <h2 class="section-title" style="margin:0; font-weight:600;">PHILOSOPHY</h2>
+
+        <h3 class="lead" style="margin:10px 0 0;">
+          Treviark is a house where living unfolds as a respectful ritual, rooted deeply in a culture of manifold landscapes. It is a practice of care — from empirical observation to natural integrity, from creation to serving — celebrating the quiet grace of tradition and deliberation.
+        </h3>
+
+        <h3 class="lead" style="margin:10px 0 0;">
+          Our first releases are “Georgian Breakfast” (Tea Black) and “Velvet Infusion” (Tea Green). Both originate from Georgian plantations left untouched for nearly a century, where the cold winters naturally protect the bushes and allow them to thrive without artificial influence. Nothing is added, only revealed.
+        </h3>
+
+        <h3 class="lead" style="margin:10px 0 0;">
+          More announcements will follow.
+        </h3>
+      </div>
+
+      <!-- SHOP link -->
+      <div class="cover-title"
+           style="position:absolute; left:50%; top:75%; transform:translate(-50%,0);
+                  color:#fff; font-weight:700; letter-spacing:.08em;
+                  text-shadow:0 2px 12px rgba(0,0,0,.35); text-align:center; margin-top:20px; z-index:3;">
+        <a href="https://treviark.storera.ge/" style="color:inherit; text-decoration:none;">SHOP</a>
+      </div>
+    </section>
+  </div>
+  <!-- ===== End Cover ===== -->
 
   <!-- JavaScript -->
   <script src="main.js"></script>
