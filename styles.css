@@ -1,8 +1,3 @@
-/* ======================================
-   BASE / GLOBAL
-   - lock to one screen, no scrollbars
-   - system font stack
-====================================== */
 html, body { height: 100%; margin: 0; }
 
 body {
@@ -12,11 +7,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* ======================================
-   LANDING / HERO
-   - centered logo + CTA
-   - CTA has rise-in animation (see keyframes)
-====================================== */
+
 .hero {
   height: 75%;
   display: flex;
@@ -43,7 +34,7 @@ body {
 .cta:hover { background: rgba(99, 4, 4, 0.39); }
 .cta:active { transform: scale(1.08); transition: ease 0.5s; color: #342814; }
 
-/* CTA appear-from-below animation */
+
 .hero .cta {
   opacity: 0;
   transform: translateY(28px);
@@ -58,9 +49,6 @@ body {
   .hero .cta { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
-/* ======================================
-   LEGAL LINKS (landing)
-====================================== */
 .legal {
   position: absolute;
   right: 2rem; bottom: 1.5rem;
@@ -83,10 +71,7 @@ body {
   }
 }
 
-/* ======================================
-   COVER (POST-DOORS) SHELL
-   - fades in after door animation
-====================================== */
+
 .cover-root { opacity: 0; transition: opacity 220ms ease; }
 .cover-root.show { opacity: 1; }
 body.animating .legal { pointer-events: none; }
@@ -109,9 +94,7 @@ body.cover-mode {
   display: flex; flex-direction: column;
 }
 
-/* ======================================
-   TOPBAR (COVER)
-====================================== */
+
 body.cover-mode .topbar {
   height: var(--header-h);
   display: flex; align-items: center;
@@ -130,7 +113,7 @@ body.cover-mode .icon-btn {
 }
 @media (max-width:576px){ body.cover-mode .icon-btn { width: 32px; height: 32px; } }
 
-/* Thin, crisp SVG icons */
+
 body.cover-mode .icon-btn .icon-svg {
   width: 22px; height: 22px;
   stroke: currentColor; stroke-width: 1.4;
@@ -142,10 +125,10 @@ body.cover-mode .icon-btn .icon-svg {
   body.cover-mode .icon-btn:active { opacity: .72; transform: translateY(.5px); }
 }
 
-/* Brand image height */
+
 body.cover-mode .brand-img { height: var(--brand-h); width: auto; display: block; }
 
-/* Optional nav links (desktop) */
+
 body.cover-mode .toplinks { gap: 22px; }
 body.cover-mode .toplinks.nav-tabs { border-bottom: 0; }
 body.cover-mode .toplinks .nav-link {
@@ -157,11 +140,7 @@ body.cover-mode .toplinks .nav-link:hover { text-decoration: underline; }
   body.cover-mode .toplinks, body.cover-mode .topicons { display: none !important; }
 }
 
-/* ======================================
-   COVER CANVAS
-   - fills viewport below topbar
-   - media as background
-====================================== */
+
 body.cover-mode .cover {
   position: relative !important;
   height: calc(100dvh - var(--header-h)) !important;
@@ -177,7 +156,7 @@ body.cover-mode .container {
   margin-top: 20px !important;
 }
 
-/* Background media */
+
 .cover-img, .cover-video {
   position: absolute !important; inset: 0 !important;
   width: 100% !important; height: 100% !important;
@@ -190,7 +169,7 @@ body.cover-mode .container {
   .cover-img { display: none !important; }
 }
 
-/* Title/link default styles (when used absolutely) */
+
 body.cover-mode .cover-title {
   position: absolute; left: 50%; top: 95%;
   transform: translate(-50%, -50%);
@@ -212,7 +191,7 @@ body.cover-mode .cover-title {
   body.cover-mode .cover-title a:active { transform: scale(1.03); color: #616161 !important; }
 }
 
-/* Basic text defaults (container context) */
+
 body.cover-mode .section-title {
   margin: 0 0 8px 0; text-align: center; font-weight: 600;
   letter-spacing: .02em; font-size: clamp(18px, 2vw, 28px);
@@ -221,13 +200,13 @@ body.cover-mode .container .lead {
   margin: 0; text-align: center; font-size: clamp(14px, 1.2vw, 18px);
 }
 
-/* Keep bottom caption above video when absolutely positioned */
+
 body.cover-mode .cover > div[style*="bottom"] { z-index: 3 !important; }
 @media (max-width: 576px) {
   body.cover-mode .cover > div[style*="bottom"] { bottom: 22% !important; }
 }
 
-/* Transition states */
+
 body.animating .hero { opacity: 0; }
 body.cover-mode .legal { display: none !important; }
 
@@ -236,9 +215,7 @@ body.cover-mode .legal { display: none !important; }
   body.cover-mode { height: 100dvh; overflow: hidden; }
 }
 
-/* ======================================
-   SIDE MENU (DRAWER)
-====================================== */
+
 .side-menu {
   position: fixed; inset: 0 auto 0 0;
   width: min(306px, 84vw);
@@ -266,7 +243,7 @@ body.cover-mode .legal { display: none !important; }
 .side-menu__nav a { color: #111; text-decoration: none; font-size: 15px; }
 .side-menu__nav a:hover { text-decoration: none; }
 
-/* Menu scrim */
+
 .side-scrim {
   position: fixed; inset: 0; background: rgba(0,0,0,.06);
   opacity: 0; transition: opacity .18s ease; z-index: 999;
@@ -274,17 +251,13 @@ body.cover-mode .legal { display: none !important; }
 .side-scrim.show { opacity: 1; }
 body.menu-open { overflow: hidden; }
 
-/* Topbar spacing tweaks */
+
 body.cover-mode .topbar .col-4 { gap: 8px; }
 @media (min-width: 768px) { body.cover-mode .topbar .col-4 { gap: 12px; } }
 
 body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
 
-/* ======================================
-   COVER LAYOUT (FLEX)
-   - positions top text and "SHOP" link with constant spacing
-   - neutralizes inline absolute styles for those blocks
-====================================== */
+
 #coverRoot .cover {
   position: relative !important;
   display: flex !important;
@@ -294,11 +267,11 @@ body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
   overflow: hidden !important;
 }
 
-/* Media sits behind interactive content */
+
 #coverRoot .cover-img, #coverRoot .cover-video { z-index: 0 !important; }
 #coverRoot .cover > * { z-index: 3; }
 
-/* Target both the inline-styled block AND your class .cover-copy (future-proof) */
+
 #coverRoot .cover > div[style*="top:25%"],
 #coverRoot .cover .cover-copy,
 #coverRoot .cover-title {
@@ -307,7 +280,7 @@ body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
   text-align: center; width: min(900px, 90vw); margin: 0 auto;
 }
 
-/* Typography scales with viewport height (fits on short screens) */
+
 #coverRoot .cover > div[style*="top:25%"] h2.section-title,
 #coverRoot .cover .cover-copy h2.section-title {
   font-weight: 300 !important; letter-spacing: .03em;
@@ -329,7 +302,7 @@ body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
   text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 
-/* Tighten spacing on short viewports (no scroll, no overlap) */
+
 @media (max-height: 820px) {
   #coverRoot .cover { --cover-pad-top: 14vh; --cover-pad-bottom: 10vh; }
 }
@@ -354,10 +327,7 @@ body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
   #coverRoot .cover { padding-left: 5vw; padding-right: 5vw; }
 }
 
-/* ======================================
-   TYPOGRAPHY VARIABLES (EASY TWEAKS)
-   - adjust sizes per breakpoint without hunting selectors
-====================================== */
+
 :root {
   --h2-min: 24px; --h2-pref: 4.2vh; --h2-max: 42px;
   --p-min: 12px;  --p-pref: 2.8vh;  --p-max: 25px;
@@ -371,10 +341,14 @@ body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
   }
 }
 @media (max-height: 700px) {
-  :root { --h2-pref: 3.4vh; --p-pref: 1.8vh; --shop-pref: 2.8vh; }
+  :root {
+    --h2-pref: 3.9vh;   
+    --p-pref:  2.6vh;   
+    --shop-pref: 3.15vh; /* . */
+  }
 }
 
-/* Apply variables (kept for compatibility with your earlier setup) */
+
 #coverRoot .cover > div[style*="top:25%"] h2.section-title,
 #coverRoot .cover .cover-copy h2.section-title {
   font-size: clamp(var(--h2-min), var(--h2-pref), var(--h2-max));
@@ -391,19 +365,19 @@ body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
 }
 
 
-/* Make the icon fully opaque (photo #2 is solid black, not grey) */
+
 .icon-btn { opacity: 1 !important; }
 
-/* Reset any global icon-svg styles for THIS hamburger only */
+
 .icon-btn .hamburger {
   display: block;
   overflow: visible;
   fill: none;
-  width: 30px;              /* visual size; change freely */
+  width: 30px;             
   height: 22px;
 }
 
-/* Crisp, flat-ended, controllable thickness */
+
 .icon-btn .hamburger line {
   stroke: #111 !important;                  /* solid black, not grey */
   stroke-width: 0.95px !important;          /* ← adjust thickness here */
@@ -415,7 +389,7 @@ body.cover-mode .cart-count { font-size: 12px; line-height: 1; }
 
 
 body.cover-mode .topbar .col-4:first-child {
-  padding-left: 0px !important; /* adjust this number */
+  padding-left: 0px !important; 
   padding-bottom: 2px !important;
 }
 
@@ -436,7 +410,7 @@ body.cover-mode .topbar .brand-img {
 
 @media (max-width: 576px) {
   body.cover-mode .topbar .brand-img {
-    padding-top: 10px;  /* adjust this number */
+    padding-top: 10px;  
   }
 }
 
