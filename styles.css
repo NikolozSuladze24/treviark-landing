@@ -7,11 +7,8 @@
 }
 
 
-/* =========================
-   BASE
-   ========================= */
 html, body {
-  height: 100vh;                  /* allow subtle rubber-band bounce */
+  height: 100vh;                  /* allow subtle bounce */
   margin: 0;
   overflow-y: auto;
   overflow-x: hidden;
@@ -25,16 +22,14 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* =========================
-   LANDING / HERO
-   ========================= */
+
 .hero {
   height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(10px, 2.6vh, 18px);   /* closer button-to-logo gap */
+  gap: clamp(10px, 2.6vh, 18px);   
   position: relative;
   padding: 4vh 4vw;
 }
@@ -61,7 +56,7 @@ body {
 .cta:hover  { background: rgba(99, 4, 4, 0.39); transform: scale(1.04); }
 .cta:active { transform: scale(1.08); color: #342814; }
 
-/* Rise-in */
+
 .hero .cta {
   opacity: 0;
   transform: translateY(28px);
@@ -91,9 +86,7 @@ body {
   .legal { left: 0; right: 3px; bottom: 30px; justify-content: space-between; padding: 0 14px; }
 }
 
-/* =========================
-   COVER MODE VARS
-   ========================= */
+
 :root {
   --header-h: 88px;
   --brand-h: clamp(30px, 4.6vw, 52px);
@@ -119,7 +112,7 @@ body {
 @media (max-height: 700px) { :root { --h2-pref: 3.9vh; --p-pref: 2.6vh; --shop-pref: 3.15vh; } }
 @media (min-width: 992px) { :root { --p-pref: 3.1vh; --p-max: 28px; } }
 
-/* Desktop-only bigger philosophy text */
+
 @media (min-width: 992px) {
   :root {
     --p-pref: 3.6vh;
@@ -128,9 +121,7 @@ body {
 }
 
 
-/* =========================
-   COVER MODE SHELL
-   ========================= */
+
 body.cover-mode {
   background: #fff !important;
   display: flex;
@@ -162,20 +153,17 @@ body.cover-mode .topbar .brand-img { padding-top: 3px; }
   }
 }
 
-/* Hamburger (hairline, flat ends) */
+
 .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: transparent; border: 0; border-radius: 999px; color: #111; line-height: 1; padding: 0; }
 @media (max-width:576px){ .icon-btn { width: 32px; height: 32px; } }
 .icon-btn .hamburger { display: block; overflow: visible; fill: none; width: 30px; height: 22px; }
 .icon-btn .hamburger line { stroke:#111 !important; stroke-width:.95px !important; stroke-linecap:square !important; vector-effect: non-scaling-stroke !important; shape-rendering: crispEdges; }
 
-/* =========================
-   COVER CANVAS
-   ========================= */
-/* Use a 2-row grid so SHOP can sit centered in the remaining space below the text */
+
 #coverRoot .cover {
   position: relative !important;
   display: grid !important;
-  grid-template-rows: auto 1fr;           /* row1: text, row2: free space */
+  grid-template-rows: auto 1fr;          
   align-items: start;
   justify-items: center;
   height: calc(100dvh - var(--header-h)) !important;
@@ -201,16 +189,16 @@ body.cover-mode .topbar .brand-img { padding-top: 3px; }
   text-align: center; width: min(900px, 90vw); margin: 0 auto;
   z-index: 3;
   justify-self: center;
-  align-self: start;              /* keep at top of the content area */
+  align-self: start;              
 }
 
-/* SHOP block (row 2) — centered in the remaining space */
+
 #coverRoot .cover-title {
   position: static !important; transform: none !important;
   width: auto; margin: 0;
   z-index: 3;
   justify-self: center;
-  align-self: center;             /* ← centers vertically in free space */
+  align-self: center;             
   text-align: center;
 }
 
@@ -226,7 +214,7 @@ body.cover-mode .topbar .brand-img { padding-top: 3px; }
   font-size: clamp(var(--p-min), var(--p-pref), var(--p-max));
 }
 
-/* SHOP pill (match CTA style, but white) + hover scale up */
+
 #coverRoot .cover-title a {
   display: inline-block;
   padding: .3rem 1rem;
@@ -242,7 +230,7 @@ body.cover-mode .topbar .brand-img { padding-top: 3px; }
 #coverRoot .cover-title a:hover  { background: rgba(51,51,51,.35); transform: scale(1.06); }
 #coverRoot .cover-title a:active { transform: scale(1.03); color: #e6e6e6 !important; }
 
-/* Fade-up for the three lead lines */
+
 #coverRoot .cover .cover-copy .lead {
   opacity: 0; transform: translateY(32px);
   animation: coverFadeUp 2.2s ease forwards;
@@ -252,7 +240,7 @@ body.cover-mode .topbar .brand-img { padding-top: 3px; }
 #coverRoot .cover .cover-copy .lead:nth-of-type(3){ animation-delay: .55s; }
 @keyframes coverFadeUp { to { opacity:1; transform:none; } }
 
-/* Short screens: reduce padding & tighten lines */
+
 @media (max-height: 820px) {
   #coverRoot .cover { --cover-pad-top: 14vh; --cover-pad-bottom: 10vh; }
 }
@@ -268,9 +256,7 @@ body.cover-mode .topbar .brand-img { padding-top: 3px; }
 }
 @media (max-width: 576px) { #coverRoot .cover { padding-left: 5vw; padding-right: 5vw; } }
 
-/* =========================
-   SIDE MENU (kept minimal)
-   ========================= */
+
 .side-menu {
   position: fixed; inset: 0 auto 0 0;
   width: min(306px, 84vw);
@@ -299,8 +285,8 @@ body.menu-open { overflow: hidden; }
 
 @media (min-width: 992px) {
   #coverRoot .cover {
-    --cover-pad-top: 18vh;     /* bigger = moves text DOWN */
-    --cover-pad-bottom: 5vh;  /* bigger = lowers SHOP (more bottom space) */
+    --cover-pad-top: 18vh;     
+    --cover-pad-bottom: 5vh;  
   }
 
   #coverRoot .cover .cover-copy h3,
